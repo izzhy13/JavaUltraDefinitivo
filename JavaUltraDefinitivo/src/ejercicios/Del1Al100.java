@@ -1,7 +1,6 @@
 package ejercicios;
 
 public class Del1Al100 { //for dentro de otro for
-
 	public static void main(String[] args) {
 
 		for (int i = 1 ; i <= 10 ; i++ ) { //el bloque de fuera me ve las filas
