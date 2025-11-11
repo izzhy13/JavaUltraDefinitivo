@@ -1,4 +1,4 @@
-package ejercicios; //SIN TERMINARRR
+package ejercicios.bucles; //SIN TERMINARRR
 
 import java.util.Scanner;
 

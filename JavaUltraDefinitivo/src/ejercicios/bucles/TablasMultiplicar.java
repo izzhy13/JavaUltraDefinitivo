@@ -1,4 +1,4 @@
-package ejercicios;
+package ejercicios.bucles;
 
 public class TablasMultiplicar {
 	public static void main(String[] args) {

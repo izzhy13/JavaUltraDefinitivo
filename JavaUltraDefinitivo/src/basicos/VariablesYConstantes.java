@@ -1,10 +1,8 @@
 package basicos;
-
 public class VariablesYConstantes {
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
-		
-		//Declaramos una constante, las constantes se inicializan siempre, y se ponen en MAYUS
+        //Declaramos una constante, las constantes se inicializan siempre
         final int ANIO_NACIMIENTO=1984;
 
         //Declaramos algunas variables, y además las inicializamos
@@ -42,6 +40,5 @@ public class VariablesYConstantes {
 
  */
 
-	}
-
+    }
 }

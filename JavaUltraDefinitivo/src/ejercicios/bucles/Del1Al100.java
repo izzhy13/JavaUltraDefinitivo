@@ -1,4 +1,4 @@
-package ejercicios;
+package ejercicios.bucles;
 
 public class Del1Al100 { //for dentro de otro for
 	public static void main(String[] args) {

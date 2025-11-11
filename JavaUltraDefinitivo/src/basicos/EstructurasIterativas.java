@@ -28,7 +28,7 @@ public class EstructurasIterativas {
         do {
             System.out.print("Introduce la contraseña: ");
             claveIngresada = scanner.nextLine();
-        } while (claveIngresada == claveSecreta); // Repetir mientras la clave NO sea la correcta
+        } while (!claveIngresada.equals(claveSecreta)); //esto se ve con los Strings
 
         System.out.println("¡Acceso concedido!");
         scanner.close();
