@@ -15,7 +15,7 @@ public class AdivinaNumero {
 		System.out.println("Número aleatorio: " + num);
 
 		int intentos = 10;
-		System.out.println("Tienes 10 intentos para adivinar el numero");
+		System.out.println("Tienes 10 intentos para adivinar el numero del 1 al 100");
 
 		do {
 			System.out.println("Cual crees que es el numero aleatorio");
