@@ -17,11 +17,12 @@ public class PalindromoOInvertir { //si no es palincromo le damos la vuelta y de
 	}
 
 	public static String cadenaInvertida(String cadena) {
-		String cadenaInvertida = "";
+		String cadenaInvertida;
 		StringBuilder cadenaTemporal = new StringBuilder();
 
 		for (int i = cadena.length()-1; i>=0; i--) {
 			cadenaTemporal.append(cadena.charAt(i));
+			//System.out.println(i + " es " + cadena.charAt(i));
 		}
 
 		cadenaInvertida = cadenaTemporal.toString();
@@ -34,11 +35,12 @@ public class PalindromoOInvertir { //si no es palincromo le damos la vuelta y de
 		String palabra = entrada.nextLine();
 
 		if (esPalindromo(palabra)) {
-			System.out.println("\nLa palabra es palindroma");
+			System.out.println("La palabra es palindroma");
 		} else {
-			System.out.println("\nLa palabra NO es palindroma ya que al reves es " + cadenaInvertida(palabra));
+			System.out.println("La palabra NO es palindroma ya que al reves es " + cadenaInvertida(palabra));
 		}
 
+		entrada.close();
+		
 	}
-
 }
