@@ -17,7 +17,7 @@ public class SumaNImpares {
 			}
 		}
 
-		System.out.println("\nversion dos con forcon un incremento de 2");
+		System.out.println("\nversion dos con for con un incremento de 2");
 
 		for (int i = 1; i <= num; i+=2) {
 			//System.out.println("num de bucle" +i);

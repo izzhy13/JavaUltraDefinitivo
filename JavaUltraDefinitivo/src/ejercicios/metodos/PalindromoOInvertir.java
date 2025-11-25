@@ -34,7 +34,7 @@ public class PalindromoOInvertir { //si no es palincromo le damos la vuelta y de
 		System.out.println("Dime una palabra y te digo si es palindroma o no");
 		String palabra = entrada.nextLine();
 
-		if (esPalindromo(palabra)) {
+		if (esPalindromo(palabra.toLowerCase())) {
 			System.out.println("La palabra es palindroma");
 		} else {
 			System.out.println("La palabra NO es palindroma ya que al reves es " + cadenaInvertida(palabra));
