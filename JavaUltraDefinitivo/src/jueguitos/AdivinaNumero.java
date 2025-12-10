@@ -1,4 +1,4 @@
-package ejercicios.bucles;
+package jueguitos;
 
 import java.util.Random;
 import java.util.Scanner;
