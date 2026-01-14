@@ -17,6 +17,10 @@ public class Tamagotchi {
 		this.energia = energia;
 	}
 
+	public void saludar() {
+		System.out.println("Soy " + this.nombre + " encantado ");
+	}
+	
 	public void status () {
 		System.out.println("Tu mascota " + nombre + " tiene " + hambre + 
 				" de hambre " + " y " + energia + " de energia");
