@@ -1,6 +1,7 @@
 package ejercicios.metodos;
 
 public class Recursos {
+	
 	public static int numAleatorio(int hasta) {
 		return((int)((Math.random()*hasta)+1));
 	}
