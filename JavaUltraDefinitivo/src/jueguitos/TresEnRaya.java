@@ -19,34 +19,114 @@ public class TresEnRaya {
 		}
 	}
 
-	public static int ponerFicha (int fila, int columna, char ficha) {
+	public static boolean ponerFicha (int fila, int columna, char ficha) {
 		if (tablero[fila][columna] == '-') {
-			//esta libre podemos poner la ficha
+			//esta libre podemos poner la ficha, si devuelve true la ficha se puede colocar
 			tablero[fila][columna] = ficha;
-			return 0;
+			return true;
 		}else {
-			//no podemos poner la ficha, ya hay una
+			//no podemos poner la ficha, ya hay una, si devuelve false ya hay ficha
 			System.out.println("ya hay una ficha colocada");
-			return -1;
+			return false;
 		}
 	} 
-	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		char ficha;
 
+	public static boolean hayGanador() {
+		//hay 3 en raya en la horizontal
+		for (int i=0; i < tablero.length;i++) {
+			if ((tablero[i][0]==tablero[i][1] 
+					&& tablero[i][1]==tablero[i][2]) && tablero[i][0]!='-') {
+				return true;
+			}
+		}
+
+		//Comprobamos las columnas
+		for (int j=0; j< tablero[0].length;j++) {
+			if ((tablero[0][j]==tablero[1][j] 
+					&& tablero[1][j]==tablero[2][j]) && tablero[0][j]!='-') {
+				return true;
+			}
+		}
+
+		//Ahora con las diagonales
+		if ((tablero[0][0]==tablero[1][1] 
+				&& tablero[1][1]==tablero[2][2] && tablero[0][0]!='-')
+				||
+				(tablero[0][2]==tablero[1][1] 
+						&& tablero[1][1]==tablero[2][0])  && tablero[0][2]!='-') {
+			return true;
+		}
+
+		//Si llegamos aquí es que nadie ganó aun
+		return false;
+	}
+
+	public static boolean hayEmpate() {
+		//hay que tener cuidado por si alguien gana en la última jugada
+		for (int i=0; i < tablero.length; i++){
+			for (int j=0; j < tablero.length; j++) {
+				if (tablero[i][j]=='-') {
+					//si encontramos un guion es que hay un espaco libre y por tanto no acaba el game
+					return false;
+				}
+			}
+		}
+		//si llegamos aqui no hay guiones, no hay espacios, hay empate
+		return true;
+	}
+
+	public static void crearTablero() {
 		for (int i = 0; i < tablero.length ; i++) { 
 			Arrays.fill(tablero[i], '-');
 		}
+	}
 
-		System.out.println("Con que quieres jugar X o O");
-		ficha = sc.next().charAt(0);
-		System.out.println(ficha);
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int fila, columna;
+		int jugadorActivo;
+		boolean fichaColocada;
 
-		mostrarTablero();
-		ponerFicha(1,2,'X');
-		ponerFicha(1,2,'X');
-		mostrarTablero();
+		System.out.println("Elige el caracter para el jugador1");
+		char fichaJugador = sc.nextLine().charAt(0);
+		System.out.println("Elige el caracter para el jugador2");
+		char fichaRival = sc.nextLine().charAt(0);
+
+		crearTablero();
+		
+		//empieza el jugador 1, vamos a llevar el turno por un boolean
+		boolean turnoJugador1 = true;
+
+		do {
+
+			do {
+				jugadorActivo = (turnoJugador1) ? 1 : 2;
+				System.out.println("------------------------");
+				System.out.println("Turno del jugador " + jugadorActivo);
+
+				System.out.println("Donde quieres poner la ficha? primero dime la fila y luego la columna (1-3)");
+				fila = sc.nextInt()-1;
+				columna = sc.nextInt()-1;
+
+				fichaColocada = (turnoJugador1) ? ponerFicha(fila,columna,fichaJugador) : ponerFicha(fila,columna,fichaRival);
+
+				/* if (turnoJugador) {
+					fichaColocada=ponerFicha(fila,columna,fichaJugador);
+				}else {
+					fichaColocada=ponerFicha(fila,columna,fichaRival);
+				} */
+
+			} while(!fichaColocada);
+			mostrarTablero();
+			turnoJugador1 = !turnoJugador1; //si es tru pone false y al reves
+
+		} while (hayGanador() == false && hayEmpate()== false);
+
+		if (hayEmpate()) {
+			System.out.println("Empate!");
+		} else {
+			System.out.println("Ha ganado el jugador " + jugadorActivo + " !!");
+		}
 
 		sc.close();
 
