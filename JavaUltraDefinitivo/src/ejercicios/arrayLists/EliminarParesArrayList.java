@@ -13,19 +13,28 @@ public class EliminarParesArrayList {
 		numeros.add(3);
 		numeros.add(5);
 		numeros.add(6);
-				
-		/*for (int i = numeros.size()-1 ; i >= 0 ; i--) {
+			
+		//manera 1
+		
+		for (int i = numeros.size()-1 ; i >= 0 ; i--) {
 			if (numeros.get(i) % 2 == 0) {
 				numeros.remove(i);       
 			}
-		} */
+		} 
+		
+		//manera 2
 		
 		for (int i = 0; i < numeros.size(); i++) {
 			if (numeros.get(i) % 2 == 0) {
-				numeros.remove(i);   
+				numeros.remove(i);  
+				//volvemos a mirar, ya que eliminamos ese registro y el Array se comprime
 				i--;
 			}
 		}
+		
+		//manera 3
+		
+		numeros.removeIf(par -> par % 2 == 0);
 		
 		System.out.println(numeros);		
 	}
