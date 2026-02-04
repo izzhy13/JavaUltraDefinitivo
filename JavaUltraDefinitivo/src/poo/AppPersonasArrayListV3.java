@@ -15,7 +15,7 @@ public class AppPersonasArrayListV3 {
 
 		System.out.println("¿Como te llamas?"); // individuo número " + i + " ?");
 		nombre = sc.nextLine();
-		System.out.println("¿Y cuantos años tienes?");
+		System.out.println("¿Y cuantos años tienes?"); //manera de que no te pida la edad si ya existe el nombre?
 		edad = sc.nextInt();
 		sc.nextLine(); //hay que limpiar el buffer
 
