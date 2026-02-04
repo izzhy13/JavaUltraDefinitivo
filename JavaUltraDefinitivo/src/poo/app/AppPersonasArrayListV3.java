@@ -1,14 +1,15 @@
-package poo;
+package poo.app;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import poo.Persona;
+
 public class AppPersonasArrayListV3 {
 
-	static ArrayList<Persona> personas = new ArrayList<>(); //esto ns donde ponerlo
 	static Scanner sc = new Scanner(System.in);
-
-	public static void agregarPersona() {
+	
+	private static void agregarPersona(ArrayList<Persona>personas) {
 
 		String nombre;
 		int edad;
@@ -21,14 +22,22 @@ public class AppPersonasArrayListV3 {
 
 		boolean encontrada = false;
 
-		for (int i = 0; i < personas.size() ; i++) {
+		for (Persona per : personas) {
+			if (per.getNombre().equalsIgnoreCase(nombre)) {
+				encontrada = true;
+				break;
+			}
+		}
+		
+		
+		for (int i = 0; i < personas.size() ; i++) { //mejor con el contains
 			if (personas.get(i).getNombre().equalsIgnoreCase(nombre)) {
 				encontrada = true;
 				break;
 			}
 		}
 
-		if (encontrada == false) {
+		if (!encontrada) {
 			Persona pers = new Persona(nombre,edad);
 			personas.add(pers);
 		} else {
@@ -36,7 +45,7 @@ public class AppPersonasArrayListV3 {
 		}
 	}
 
-	public static void eliminarPersona() {
+	public static void eliminarPersona(ArrayList<Persona>personas) {
 
 		System.out.println("¿A que persona quieres eliminar?, dime su nombre");
 		String eliminado = sc.nextLine(); 
@@ -50,7 +59,7 @@ public class AppPersonasArrayListV3 {
 		}
 	}
 
-	public static void saberDatos () {
+	public static void saberDatos (ArrayList<Persona>personas) {
 
 		for (int i = 0; i < personas.size(); i++) {
 			System.out.println("Me llamo " + personas.get(i).getNombre() + 
@@ -59,11 +68,13 @@ public class AppPersonasArrayListV3 {
 	}
 
 	public static void main(String[] args) {
+		ArrayList<Persona>personas = new ArrayList<>();
+		
 		int opcion;
 
 		do {
 
-			System.out.println("Que opcion quieres elegir");
+			System.out.println("\n\nQue opcion quieres elegir");
 			System.out.println("1.Crear persona");
 			System.out.println("2.Eliminar persona");
 			System.out.println("3.Saber datos");
@@ -74,13 +85,13 @@ public class AppPersonasArrayListV3 {
 
 			switch (opcion) {
 			case 1 : 
-				agregarPersona();
+				agregarPersona(personas);
 				break;
 			case 2 :
-				eliminarPersona();
+				eliminarPersona(personas);
 				break;
 			case 3:
-				saberDatos();
+				saberDatos(personas);
 				break;
 			case 4:
 				System.out.println("Adios!");

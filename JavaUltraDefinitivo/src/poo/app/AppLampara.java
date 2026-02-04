@@ -1,4 +1,6 @@
-package poo;
+package poo.app;
+
+import poo.Lampara;
 
 public class AppLampara {
 

@@ -1,4 +1,6 @@
-package poo;
+package poo.app;
+
+import poo.Coche;
 
 public class AppCocheMotor {
 	public static void main(String[] args) {

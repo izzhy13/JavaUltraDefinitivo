@@ -1,6 +1,8 @@
-package poo;
+package poo.app;
 
 import java.util.Scanner;
+
+import poo.Tamagotchi;
 
 public class AppTamagotchi {
 

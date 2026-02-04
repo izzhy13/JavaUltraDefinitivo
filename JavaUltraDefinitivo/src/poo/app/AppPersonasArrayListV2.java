@@ -1,7 +1,9 @@
-package poo;
+package poo.app;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import poo.Persona;
 
 public class AppPersonasArrayListV2 {
 

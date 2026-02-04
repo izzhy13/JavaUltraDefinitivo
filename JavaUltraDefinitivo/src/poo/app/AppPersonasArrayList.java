@@ -1,6 +1,8 @@
-package poo;
+package poo.app;
 
 import java.util.ArrayList;
+
+import poo.Persona;
 
 public class AppPersonasArrayList {
 

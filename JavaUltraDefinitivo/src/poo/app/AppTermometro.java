@@ -1,4 +1,6 @@
-package poo;
+package poo.app;
+
+import poo.Termometro;
 
 public class AppTermometro {
 
