@@ -17,6 +17,14 @@ public class AppGestionMatriculas {
 	public static void mostrarMaterias(ArrayList<Materia> mat) {
 
 	}
+	
+	public void añadirMateria(ArrayList<Materia> mat) {
+
+	}
+	
+	public void añadirEstudiante(String nombre) {
+
+	}
 
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
