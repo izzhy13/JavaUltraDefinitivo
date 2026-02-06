@@ -44,16 +44,12 @@ public class AppGestionMatriculas {
 				System.out.println("Adios!");
 				break;
 			case 1 : 
-				agregarPersona(personas);
 				break;
 			case 2 :
-				eliminarPersona(personas);
 				break;
 			case 3:
-				saberDatos(personas);
 				break;
 			case 4:
-				saberDatos(personas);
 				break;
 			case 5:
 				mostrarEstudiantes(estudiantes);
