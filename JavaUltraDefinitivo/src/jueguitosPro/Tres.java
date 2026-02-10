@@ -1,34 +1,9 @@
-package jueguitos;
+package jueguitosPro;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
-public class TresEnRaya {
-
-	static char [][] tablero = new char [3][3];
-
-	public static void mostrarTablero () {
-		System.out.println("\n Tablero actual \n------------------------");
-
-		for (int i = 0; i < tablero.length ; i++) { 
-			for (int j = 0; j < tablero[0].length ; j++) {
-				System.out.print(tablero[i][j]  + "\t ");
-			}
-			System.out.println("  ");
-		}
-	}
-
-	public static boolean ponerFicha (int fila, int columna, char ficha) {
-		if (tablero[fila][columna] == '-') {
-			//esta libre podemos poner la ficha, si devuelve true la ficha se puede colocar
-			tablero[fila][columna] = ficha;
-			return true;
-		}else {
-			//no podemos poner la ficha, ya hay una, si devuelve false ya hay ficha
-			System.out.println("ya hay una ficha colocada");
-			return false;
-		}
-	} 
+/*
+public class Tres {
 
 	public static boolean hayGanador() {
 		//hay 3 en raya en la horizontal
@@ -74,12 +49,6 @@ public class TresEnRaya {
 		return true;
 	}
 
-	public static void crearTablero() {
-		for (int i = 0; i < tablero.length ; i++) { 
-			Arrays.fill(tablero[i], '-');
-		}
-	}
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int fila, columna;
@@ -92,7 +61,7 @@ public class TresEnRaya {
 		char fichaRival = sc.nextLine().charAt(0);
 
 		crearTablero();
-		
+
 		//empieza el jugador 1, vamos a llevar el turno por un boolean
 		boolean turnoJugador1 = true;
 
@@ -109,11 +78,11 @@ public class TresEnRaya {
 
 				fichaColocada = (turnoJugador1) ? ponerFicha(fila,columna,fichaJugador) : ponerFicha(fila,columna,fichaRival);
 
-				/* if (turnoJugador) {
+				 if (turnoJugador) {
 					fichaColocada=ponerFicha(fila,columna,fichaJugador);
 				}else {
 					fichaColocada=ponerFicha(fila,columna,fichaRival);
-				} */
+				} 
 
 			} while(!fichaColocada);
 			mostrarTablero();
@@ -132,3 +101,4 @@ public class TresEnRaya {
 	}
 
 }
+ */
