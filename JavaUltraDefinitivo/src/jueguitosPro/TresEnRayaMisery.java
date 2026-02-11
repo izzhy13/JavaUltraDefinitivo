@@ -1,6 +1,60 @@
 package jueguitosPro;
 
-public class TresEnRayaMisery {
+import java.util.Scanner;
 
+public class TresEnRayaMisery {
+	private Tablero tablero;
+	private Jugador j1, j2;
+	private Jugador jugadorActivo;
+
+	public TresEnRayaMisery (String nombre1, char ficha1, String nombre2, char ficha2) {
+		this.tablero = new Tablero();
+		this.j1 = new Jugador (nombre1,ficha1);
+		this.j2 = new Jugador (nombre2,ficha2);
+		this.jugadorActivo = j1;
+	}
+
+	public void inicio () {
+		Scanner sc = new Scanner(System.in);
+		boolean finPartida = false;
+
+		while (!finPartida) {
+
+			tablero.mostrar();
+			System.out.println("\nTurno de " + jugadorActivo.getNombre() + " (" + jugadorActivo.getFicha() + ")");
+
+			boolean fichaColocada = false;
+
+			while (!fichaColocada) {
+
+				System.out.println("Elige una fila");
+				int f = sc.nextInt()-1;
+				System.out.println("Elige una columna");
+				int c = sc.nextInt()-1;
+				fichaColocada = tablero.colocarFicha(f, c, jugadorActivo.getFicha());
+			}
+
+			//comprobar si hemos terminado
+			if (tablero.hayGanador()) {
+				tablero.mostrar();
+				cambiarTurno(); //para decir quien ha ganado, no quien ha perdido
+				System.out.println("Enhorabuena " + jugadorActivo.getNombre() + " has ganado");
+				finPartida = true;
+			} else if (tablero.hayEmpate()) {
+				tablero.mostrar();
+				System.out.println("Empate!! no quedan movimientos");
+				finPartida = true;
+			} else {
+				//cambio de jugador
+				cambiarTurno();
+			}
+		}
+
+		sc.close();
+	}
+
+	private void cambiarTurno () { //operador ternario
+		this.jugadorActivo = (jugadorActivo == j1) ? j2 :j1 ;
+	} //variable = (condición) ? valor_si_es_verdadero : valor_si_es_falso;
 }
 
