@@ -35,20 +35,6 @@ public class Tres {
 		return false;
 	}
 
-	public static boolean hayEmpate() {
-		//hay que tener cuidado por si alguien gana en la última jugada
-		for (int i=0; i < tablero.length; i++){
-			for (int j=0; j < tablero.length; j++) {
-				if (tablero[i][j]=='-') {
-					//si encontramos un guion es que hay un espaco libre y por tanto no acaba el game
-					return false;
-				}
-			}
-		}
-		//si llegamos aqui no hay guiones, no hay espacios, hay empate
-		return true;
-	}
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int fila, columna;
