@@ -1,6 +1,6 @@
 package laboratorios;
 
-public class testCartera {
+public class TestCartera {
 
 	public static void main(String[] args) {
 		Cartera cartera1 = new Cartera ("Alan Turing", 200);
