@@ -2,14 +2,13 @@ package poo.herencia;
 
 public class Empleado {
 	protected String nombre;
-	private int salarioBase;
+	private static double salarioBase = 1000;
 	
-	public Empleado (String nombre, int salarioBase) {
+	public Empleado (String nombre) {
 		this.nombre = nombre;
-		this.salarioBase = salarioBase; 
 	}
 
-	public int calcularSalario() {
+	public double getSalario() {
 		return salarioBase;
 	}
 		

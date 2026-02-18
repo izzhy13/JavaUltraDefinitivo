@@ -7,13 +7,13 @@ public class AppTrabajo {
 	public static void main(String[] args) {
 		ArrayList<Empleado>empleados = new ArrayList<>();
 		
-		Comercial comercial1 = new Comercial("Viktor", 1500, -500);
-		Comercial comercial2 = new Comercial("Hector", 1500, 500);
-		Repartidor repartidor1 = new Repartidor("Isa", 1100 , "Zona 1");
-		Repartidor repartidor2 = new Repartidor("Jorge", 1100 , "Zona 2");
+		Comercial comercial1 = new Comercial("Viktor", -500);
+		Comercial comercial2 = new Comercial("Hector", 500);
+		Repartidor repartidor1 = new Repartidor("Isa" , "Zona 1");
+		Repartidor repartidor2 = new Repartidor("Jorge" , "Zona 2");
 		
 		//también se pueden inicializar como
-		Empleado comercial3 = new Comercial("Mar", 1500, 700);
+		Empleado comercial3 = new Comercial("Mar", 700);
 		
 		empleados.add(comercial1);
 		empleados.add(comercial2);
@@ -22,7 +22,7 @@ public class AppTrabajo {
 		empleados.add(repartidor2);
 		
 		for (Empleado e : empleados) {
-		    System.out.println("Empleado: " + e.nombre + " - Salario: " + e.calcularSalario());
+		    System.out.println("Empleado: " + e.nombre + " - Salario: " + e.getSalario());
 		}
 	}
 }

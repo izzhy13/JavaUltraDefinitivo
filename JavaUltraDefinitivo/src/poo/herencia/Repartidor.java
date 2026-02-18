@@ -3,19 +3,18 @@ package poo.herencia;
 public class Repartidor extends Empleado{
 	protected String zona;
 
-	public Repartidor(String nombre, int salarioBase, String zona) {
-		super(nombre, salarioBase);
+	public Repartidor(String nombre, String zona) {
+		super(nombre);
 		this.zona = zona;
 	}
 
 	@Override
-	public int calcularSalario() {
-		int salario = super.calcularSalario();
+	public double getSalario() {
 
 		if (zona.equals("Zona 1")) {
-			salario+= 100;
+			return super.getSalario() + 100;
 		}
-		return salario;
+		return super.getSalario();
 	}
 }
 

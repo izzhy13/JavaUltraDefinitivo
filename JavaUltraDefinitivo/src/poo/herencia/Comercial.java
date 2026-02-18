@@ -1,16 +1,16 @@
 package poo.herencia;
 
 public class Comercial extends Empleado {
-	private int comision;
+	private double comision;
 
-	public Comercial(String nombre, int salarioBase, int comision) {
-		super(nombre, salarioBase);
+	public Comercial (String nombre, double comision) {
+		super(nombre);
 		this.comision = comision;
 	}
 
 	@Override
-	public int calcularSalario() {
-		return super.calcularSalario() + comision;
+	public double getSalario() {
+		return super.getSalario() + comision;
 	}
 
 }
