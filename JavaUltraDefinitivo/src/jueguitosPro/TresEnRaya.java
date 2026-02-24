@@ -16,6 +16,8 @@ public class TresEnRaya { //aqui va la lógica, no en el app, ahi vamos a jugar 
 
 	public void inicio () {
 		Scanner sc = new Scanner(System.in);
+		
+		 // Bucle para asegurar que el jugador pone una ficha válida
 		boolean finPartida = false;
 
 		while (!finPartida) {
@@ -30,7 +32,7 @@ public class TresEnRaya { //aqui va la lógica, no en el app, ahi vamos a jugar 
 				System.out.println("Elige una fila");
 				int f = sc.nextInt()-1;
 				System.out.println("Elige una columna");
-				int c = sc.nextInt()-1;
+								int c = sc.nextInt()-1;
 				fichaColocada = tablero.colocarFicha(f, c, jugadorActivo.getFicha());
 			}
 

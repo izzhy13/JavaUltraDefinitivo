@@ -1,7 +1,7 @@
 package poo.herencia;
 
 public class Television extends Producto{
-	protected int pulgadas;
+	private int pulgadas;
 
 	public Television(String nombre, float precio, int pulgadas) {
 		super(nombre, precio);

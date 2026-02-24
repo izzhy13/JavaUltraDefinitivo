@@ -1,7 +1,7 @@
 package poo.herencia;
 
 public class Smartphone extends Producto {
-	protected String memoriaRAM;
+	private String memoriaRAM;
 
 	public Smartphone(String nombre, float precio, String memoriaRAM) {
 		super(nombre, precio);

@@ -5,7 +5,6 @@ public class Jugador {
 	private char ficha;
 	
 	public Jugador(String nombre, char ficha) {
-		super(); //esto es para la herencia
 		this.nombre = nombre;
 		this.ficha = ficha;
 	}

@@ -11,12 +11,12 @@ public class AppJuegos {
 
 		do {
 
-			System.out.println("--------------------------------------------");
+			System.out.println("-------- BIENVENIDO A LA CONSOLA DE JUEGOS --------");
 			System.out.println("A que quieres jugar");
 			System.out.println("0.Salir");
 			System.out.println("1.Tres En Raya");
 			System.out.println("2.Tres En Raya Misery");
-			System.out.println("--------------------------------------------");
+			System.out.println("---------------------------------------------------");
 
 			opcion = sc.nextInt();
 			sc.nextLine();
@@ -39,6 +39,7 @@ public class AppJuegos {
 
 		}while (opcion != 0);
 		
+		sc.close();
 	}
 
 }

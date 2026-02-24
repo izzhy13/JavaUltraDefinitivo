@@ -67,6 +67,7 @@ public class Tablero {
 		return comprobarColumnas() || comprobarFilas() || comporbarDiagonalPrincipal() || comprobarDiagonalInversa();
 	}
 
+	//metodos privados
 	private boolean comporbarDiagonalPrincipal () {
 		if (casillas[0][0] == '-' ) {
 			return false;
@@ -119,10 +120,11 @@ public class Tablero {
 		return true;
 	}
 
-	private boolean comprobarFilas () {
+	private boolean comprobarFilas () { // Cogemos el primer carácter de la fila
 		for (int i = 0; i < dimension; i++) { //i porque son filas
 			char primero = casillas [i][0];
-
+			
+			// Si no es un hueco vacío, comprobamos si el resto de la fila es igual
 			if (primero != '-' && comprobarUnaFila(i, primero)) {
 				return true;
 			}
@@ -131,7 +133,9 @@ public class Tablero {
 	}
 	
 	private boolean comprobarUnaFila (int f, char simbolo) {
-		//fijada la fila, me fijo en la columna
+		//fijada la fila, me fijo en la columna 
+		// Empezamos en 1 porque el 0 ya lo tenemos
+
 		for (int j = 1; j < dimension; j++) { 
 			if (casillas[f][j] != simbolo) {
 				return false;
