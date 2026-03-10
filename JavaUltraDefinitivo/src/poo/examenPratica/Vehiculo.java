@@ -5,7 +5,7 @@ import java.util.Objects;
 public abstract class Vehiculo {
 	private String matricula;
 	private int horaIngreso;
-	private double precioBase = 5.0;
+	private double precioBase = 5.0; //o lo pongo con constante o en el constructor
 
 	public Vehiculo(String matricula, int horaIngreso) {
 		this.matricula = matricula;
