@@ -28,25 +28,32 @@ public class Tablero {
 			System.out.println("  ");
 		}
 	}
+	
+	public char getFicha(int f, int c) {
+		if (f >= 0 && f < dimension && c >= 0 && c < dimension ) {
+			return casillas [f][c];
+		}
+		return ' ';
+	}
 
 	public boolean colocarFicha (int fila, int columna, char ficha) {
-
 		//vamos a controlar si nos salimos del tablero
 		if (fila < 0 || fila >= dimension || columna < 0 || columna >= dimension ) {
 			System.out.println("Eso es fuera del tablero!");
 			return false;
 		} 
-
+		
 		//compruebo si la celda ya esta ocupada
 		if (casillas [fila][columna] != '-') {
 			System.out.println("Casilla ocupada!");
 			return false;
 		}
-
+		
 		casillas[fila][columna] = ficha;
 		return true;
-
 	} 
+	
+	
 
 	public boolean hayEmpate () {
 		for (int i=0; i < dimension ; i++){
@@ -94,7 +101,6 @@ public class Tablero {
 				return false;
 			}
 		}
-
 		return true;
 	}
 

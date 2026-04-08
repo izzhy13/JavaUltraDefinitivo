@@ -16,6 +16,8 @@ public class AppJuegos {
 			System.out.println("0.Salir");
 			System.out.println("1.Tres En Raya");
 			System.out.println("2.Tres En Raya Misery");
+			System.out.println("3.Tres En Raya Con Tres");
+
 			System.out.println("---------------------------------------------------");
 
 			opcion = sc.nextInt();
@@ -32,6 +34,10 @@ public class AppJuegos {
 			case 2 :
 				TresEnRayaMisery partida2 = new TresEnRayaMisery("Yoshi", 'X', "Isa", 'O');
 				partida2.inicio();
+				break;
+			case 3 :
+				TresEnRayaConTres partida3 = new TresEnRayaConTres("Hector", 'X', "Isa", 'O');
+				partida3.inicio();
 				break;
 			default:
 				System.out.println("Opcion no valida");
